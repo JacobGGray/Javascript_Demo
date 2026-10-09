@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 6</title>
+    </head>
+    <body>
+        <p id="number"></p>
+        <script>
+            const convert = [
+                "One", "Two", "Three", "Four", "Five", "Six"
+            ]
+
+            const number = Math.round(Math.random() * 5) + 1
+            document.getElementById("number").innerHTML = convert[number - 1]
+        </script>
+    </body>
+</html>

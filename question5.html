@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 5</title>
+    </head>
+    <body>
+        <p>Current Balance: <input id="balance" type="number" value="0.00" min="0" step="0.01"></p>
+        <p>Interest Rate: <input id="interest" type="number" value="0.00" min="0" step="0.01"></p>
+        <p>Desired Balance: <input id="desired" type="number" value="0.00" min="0" step="0.01"></p>
+        <button onclick="calc()">Calculate</button>
+        <script>
+            function calc() {
+                let balance = parseFloat(document.getElementById("balance").value);
+                let interest = parseFloat(document.getElementById("interest").value) * 100;
+                let desired = parseFloat(document.getElementById("desired").value);
+                let year = 0;
+                let output = "";
+
+                while (balance < desired) {
+                    year += 1;
+                    balance += Math.round(balance * interest) / 100;
+                    output += "\nYear " + year + ": New balance = £" + balance;
+                }
+
+                alert(output)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 3</title>
+    </head>
+    <body>
+        <p>Anaylsis mark out of 25: <input type="text" id="anaylsis"></p>
+        <p>Design mark out of 25: <input type="text" id="design"></p>
+        <p>Implementation mark out of 25: <input type="text" id="implementation"></p>
+        <p>Evaluation mark out of 25: <input type="text" id="evaluation"></p>
+        <button onclick="calc()">Calculate</button>
+        <script>
+            function clamp(value) {
+                return Math.max(0, Math.min(value, 25));
+            }
+
+            function get(id) {
+                return clamp(parseInt(document.getElementById(id).value));
+            }
+
+            function calc() {
+                let anaylsis = get("anaylsis");
+                let design = get("design");
+                let implementation = get("implementation");
+                let evaluation = get("evaluation");
+                let total = anaylsis + design + implementation + evaluation;
+                let grade = "";
+                let to_next = 0;
+                if (total < 4) {
+                    grade = "U";
+                    to_next = 4 - total;
+                } else if (total < 13) {
+                    grade = "G";
+                    to_next = 13 - total;
+                } else if (total < 22) {
+                    grade = "F";
+                    to_next = 22 - total;
+                } else if (total < 31) {
+                    grade = "E";
+                    to_next = 31 - total;
+                } else if (total < 41) {
+                    grade = "D";
+                    to_next = 41 - total;
+                } else if (total < 54) {
+                    grade = "C";
+                    to_next = 54 - total;
+                } else if (total < 67) {
+                    grade = "B";
+                    to_next = 4 - total;
+                } else if (total < 80) {
+                    grade = "A";
+                    to_next = 4 - total;
+                } else {
+                    grade = "A*";
+                    to_next = "Highest grade!";
+                }
+                alert("Total: " + total + "\nGrade: " + grade + "\nMarks to next boundary: " + to_next);
+            }
+        </script>
+    </body>
+</html>

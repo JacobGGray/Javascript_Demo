@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 4</title>
+    </head>
+    <body>
+        <p>Amount of numbers: <span><input id="amount" type="number" value="1" min="1"></span></p>
+        <button onclick="start()">Start</button>
+        <p><p id="label"></p><input id="input" type="number" value="0"></p>
+        <button id="next" onclick="next()">Next Number</button>
+        <script>
+            var amount = 0;
+            var sum = 0;
+            var number = 0;
+            var label = document.getElementById("label");
+
+            function start() {
+                amount = parseInt(document.getElementById("amount").value);
+                sum = 0;
+                number = 0;
+                label.innerHTML = "Number: " + (number + 1);
+            }
+
+            function next() {
+                if (number < amount) {
+                    number += 1;
+                    sum += parseInt(document.getElementById("input").value);
+                }
+
+                if (number >= amount) {
+                    let mean = sum / amount;
+                    alert("Total: " + sum + "\nMean: " + mean);
+                } else {
+                    label.innerHTML = "Number: " + (number + 1);
+                }
+            }
+        </script>
+    </body>
+</html>

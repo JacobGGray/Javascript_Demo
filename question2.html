@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 2</title>
+    </head>
+    <body>
+        <input id="num1" type="number" value="0">
+        <input id="num2" type="number" value="0">
+        <button onclick="Add()">Add</button>
+        <script>
+            function Add() {
+                let num1 = parseInt(document.getElementById("num1").value);
+                let num2 = parseInt(document.getElementById("num2").value);
+                let sum = num1 + num2;
+                alert("The sum is " + sum);
+            }
+        </script>
+    </body>
+</html>
